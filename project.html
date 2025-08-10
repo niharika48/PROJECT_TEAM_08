@@ -566,14 +566,14 @@
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('patientName').value.trim();
-            const phone = document.getElementById('phoneNumber').value.trim();
-            const email = document.getElementById('patientEmail').value.trim();
-            const date = document.getElementById('appointmentDate').value;
-            const problem = document.getElementById('selectProblem').value;
-            const doctor = document.getElementById('selectDoctor').value;
-            const time = document.getElementById('preferredTime').value;
-            const messageDiv = document.getElementById('message');
+            const name = document.getElementById('patient_Name').value.trim();
+            const phone = document.getElementById('phone_Number').value.trim();
+            const email = document.getElementById('patinet_Email id').value.trim();
+            const date = document.getElementById('appointment_Date').value;
+            const problem = document.getElementById('select your Problem').value;
+            const doctor = document.getElementById('select the Doctor').value;
+            const time = document.getElementById('preferred_Timeings').value;
+            const messageDiv = document.getElementById('messsae');
             
             // Check if slot is already booked for the same doctor, date, and time
             const slotKey = `${doctor}_${date}_${time}`;
