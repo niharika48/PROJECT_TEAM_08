@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthCare Hospital - Book Appointment</title>
+    <title> Health care hosoital</title>
     <style>
-<<<<<<< HEAD
-        /* Your full CSS remains unchanged from your version */
-        /* I’ll keep your original style here since it's already working */
-        /* Only functional code changes are in the script and IDs */
-        
-        /* ... [Your full CSS from above] ... */
-=======
-  * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-  body {
+
+        body {
             font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             color: #1e293b;
@@ -25,7 +20,7 @@
             min-height: 100vh;
         }
 
-  .header {
+        .header {
             background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #1d4ed8 100%);
             color: white;
             padding: 24px 40px;
@@ -35,7 +30,6 @@
             box-shadow: 0 4px 20px rgba(30, 64, 175, 0.15);
             position: relative;
         }
-
 
         .header::before {
             content: '';
@@ -48,7 +42,7 @@
             opacity: 0.5;
         }
 
-  .header-content {
+        .header-content {
             position: relative;
             z-index: 1;
             display: flex;
@@ -64,14 +58,14 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-  .header .website {
+        .header .website {
             font-size: 13px;
             opacity: 0.85;
             font-weight: 400;
             margin-top: 2px;
         }
 
-  .header .phone {
+        .header .phone {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             padding: 10px 20px;
@@ -81,12 +75,13 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
-   .header .phone:hover {
+
+        .header .phone:hover {
             background: rgba(255, 255, 255, 0.25);
             transform: translateY(-1px);
         }
 
- .stats-section {
+        .stats-section {
             background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             padding: 40px 40px 45px;
             display: grid;
@@ -96,7 +91,8 @@
             position: relative;
             overflow: hidden;
         }
-  .stats-section::before {
+
+        .stats-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -106,33 +102,35 @@
             background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
                         radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
         }
- .stat-item {
+
+        .stat-item {
             text-align: center;
             position: relative;
             z-index: 1;
             padding: 20px 15px;
             border-radius: 12px;
-	      background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease, background 0.3s ease;
         }
-  .stat-item:hover {
+
+        .stat-item:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.1);
         }
 
- .stat-number {
+        .stat-number {
             font-size: 42px;
             font-weight: 800;
-            margin-bottom: RR10px;
-            background: linea##r-gradient(45deg, #ffffff, #e0e7ff);
-  -webkit-background-clip: text;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
- .stat-label {
+        .stat-label {
             font-size: 15px;
             opacity: 0.95;
             font-weight: 500;
@@ -144,35 +142,35 @@
             margin: 50px auto;
             background: white;
             border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 25px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 25px rgba(0, 0, 0, 0.06);
             overflow: hidden;
             border: 1px solid rgba(226, 232, 240, 0.6);
         }
 
-  .form-header {
+        .form-header {
             padding: 35px 45px;
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             border-bottom: 1px solid #e2e8f0;
             position: relative;
         }
 
- .form-header::before {
+        .form-header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
- right: 0;
+            right: 0;
             height: 4px;
             background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
         }
-.form-header h2 {
+
+        .form-header h2 {
             font-size: 24px;
             color: #1e293b;
             margin-bottom: 8px;
             font-weight: 700;
             letter-spacing: -0.025em;
         }
-
 
         .form-header .subtitle {
             color: #dc2626;
@@ -184,11 +182,9 @@
             background-clip: text;
         }
 
-
         .form-section {
             padding: 45px;
         }
-
 
         .section-title {
             font-size: 20px;
@@ -200,20 +196,19 @@
             letter-spacing: -0.025em;
         }
 
-
         .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
             left: 50%;
- transform: translateX(-50%);
+            transform: translateX(-50%);
             width: 60px;
             height: 3px;
             background: linear-gradient(90deg, #3b82f6, #8b5cf6);
             border-radius: 2px;
         }
 
-  .form-group {
+        .form-group {
             margin-bottom: 28px;
         }
 
@@ -230,7 +225,8 @@
             color: #dc2626;
             font-weight: 700;
         }
- .form-control {
+
+        .form-control {
             width: 100%;
             padding: 16px 20px;
             border: 2px solid #e5e7eb;
@@ -241,14 +237,13 @@
             font-weight: 500;
         }
 
-  .form-control:focus {
+        .form-control:focus {
             outline: none;
             border-color: #3b82f6;
             background-color: #ffffff;
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
             transform: translateY(-1px);
         }
-
 
         .form-control:hover {
             border-color: #9ca3af;
@@ -260,7 +255,7 @@
             font-weight: 400;
         }
 
-  select.form-control {
+        select.form-control {
             cursor: pointer;
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%236b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>');
             background-position: right 16px center;
@@ -269,7 +264,7 @@
             appearance: none;
         }
 
- .btn-primary {
+        .btn-primary {
             width: 100%;
             padding: 18px;
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
@@ -287,7 +282,7 @@
             overflow: hidden;
         }
 
-  .btn-primary::before {
+        .btn-primary::before {
             content: '';
             position: absolute;
             top: 0;
@@ -311,7 +306,8 @@
         .btn-primary:active {
             transform: translateY(0);
         }
-  .footer-reviews {
+
+        .footer-reviews {
             background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             padding: 25px;
             text-align: center;
@@ -331,7 +327,6 @@
             background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
         }
 
-
         .stars {
             color: #d97706;
             font-size: 20px;
@@ -339,6 +334,14 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        .message {
+            margin-top: 20px;
+            padding: 16px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+        }
 
         .message.success {
             background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
@@ -351,7 +354,6 @@
             color: #dc2626;
             border: 2px solid #fca5a5;
         }
-
 
         @media (max-width: 768px) {
             .header {
@@ -397,9 +399,13 @@
                 padding: 25px 20px;
             }
         }
-       
->>>>>>> p5
-    </style>
+
+=======
+    <meta charset="UTF-8"R#>
+    <meta name="viewpor$t" content="width=device-width, initial-scale=1.0">
+    <title> Health care h***osoital</title>
+>>>>>>> p4
+       </style>
 </head>
 <body>
     <header class="header">
@@ -408,7 +414,7 @@
                 <h1>HealthCare Hospital</h1>
                 <div class="website">healthcarehospitals.in</div>
             </div>
-            <div class="phone">📞 040 68338767</div>
+            <div class="phone">📞 040 6jhii38767</div>
         </div>
     </header>
 
@@ -421,7 +427,7 @@
 
     <main class="main-content">
         <div class="form-header">
-            <h2>Book Appointment With <span class="subtitle">Top Specialists</span></h2>
+            <h2>Book Appointment With <span(INK class="subtitle">Top Specialists</span></h2>
         </div>
 
         <div class="form-section">
@@ -429,9 +435,9 @@
 
             <form id="appointmentForm">
                 <div class="form-group">
-                    <label for="patientName">Patient Name <span class="required">*</span></label>
+                    <label for="pati@@@entName">Patient Name <span class="required">*</span></label>
                     <input type="text" id="patientName" class="form-control" placeholder="Enter your full name" required>
-                </div>
+                <&&&&/div>
 
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number <span class="required">*</span></label>
@@ -450,8 +456,8 @@
                         <option value="Cardiology">Cardiology</option>
                         <option value="Dermatology">Dermatology</option>
                         <option value="Orthopedic">Orthopedic</option>
-                        <option value="Pediatrics">Pediatrics</option>
-                        <option value="Neurology">Neurology</option>
+                        <option value="Pedia))trics">Pediatrics</option>
+                        <option value="***Neurology">Neurology</option>
                         <option value="Gynecology">Gynecology</option>
                         <option value="ENT">ENT</option>
                         <option value="Ophthalmology">Ophthalmology</option>
