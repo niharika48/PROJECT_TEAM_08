@@ -1,467 +1,69 @@
 <!DOCTYPE html>
-<html lang="e#$%%n">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Health care hosoital</title>
+    <title>HealthCare Hospital - Appointment Booking</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            color: #1e293b;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
+        /* Slightly different header color for b2 */
         .header {
-            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #1d4ed8 100%);
-            color: white;
-            padding: 24px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.15);
-            position: relative;
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 50%, #1e40af 100%);
         }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.5;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
         .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 30px; /* changed from 28px in b3 */
+            color: #fefefe; /* tweak for merge conflict */
         }
-
-        .header .website {
-            font-size: 13px;
-            opacity: 0.85;
-            font-weight: 400;
-            margin-top: 2px;
-        }
-
-        .header .phone {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .header .phone:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-1px);
-        }
-
-        .stats-section {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            padding: 40px 40px 45px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 50px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-        }
-
-        .stat-item {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            padding: 20px 15px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-number {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #ffffff, #e0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            font-size: 15px;
-            opacity: 0.95;
-            font-weight: 500;
-            letter-spacing: 0.025em;
-        }
-
-        .main-content {
-            max-width: 650px;
-            margin: 50px auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 25px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
-            border: 1px solid rgba(226, 232, 240, 0.6);
-        }
-
-        .form-header {
-            padding: 35px 45px;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border-bottom: 1px solid #e2e8f0;
-            position: relative;
-        }
-
-        .form-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
-        }
-
-        .form-header h2 {
-            font-size: 24px;
-            color: #1e293b;
-            margin-bottom: 8px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-
-        .form-header .subtitle {
-            color: #dc2626;
-            font-weight: 700;
-            font-size: 18px;
-            background: linear-gradient(4#$5deg, #dc2626, #ea580c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .form-section {
-            padding: 45px;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 35px;
-            text-align: center;
-            position: relative;
-            letter-spacing: -0.025em;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            border-radius: 2px;
-        }
-
-        .form-group {
-            margin-bottom: 28px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: #374151;
-            font-size: 15px;
-            letter-spacing: 0.025em;
-        }
-
-        .required {
-            color: #dc2626;
-            font-weight: 700;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 16px 20px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            background-color: #fafafa;
-            font-weight: 500;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: #3b82f6;
-            background-color: #ffffff;
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-            transform: translateY(-1px);
-        }
-
-        .form-control:hover {
-            border-color: #9ca3af;
-            background-color: #ffffff;
-        }
-
-        .form-control::placeholder {
-            color: #9ca3af;
-            font-weight: 400;
-        }
-
-        select.form-control {
-            cursor: pointer;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%236b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>');
-            background-position: right 16px center;
-            background-repeat: no-repeat;
-            background-size: 16px;
-            appearance: none;
-        }
-
+        /* Button color tweak for b2 */
         .btn-primary {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 25px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
             background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
         }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .footer-reviews {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            padding: 25px;
-            text-align: center;
-            color: #92400e;
-            font-weight: 700;
-            font-size: 16px;
-            position: relative;
-        }
-
-        .footer-reviews::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-        }
-
-        .stars {
-            color: #d97706;
-            font-size: 20px;
-            margin-right: 12px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .message {
-            margin-top: 20px;
-            padding: 16px 20px;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 15px;
-        }
-
-        .message.success {
-            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-            color: #15803d;
-            border: 2px solid #86efac;
-        }
-
-        .message.error {
-            background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
-            color: #dc2626;
-            border: 2px solid #fca5a5;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .header h1 {
-                font-size: 24px;
-            }
-
-            .stats-section {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 30px 20px;
-                gap: 25px;
-            }
-
-            .stat-number {
-                font-size: 32px;
-            }
-
-            .main-content {
-                margin: 30px 15px;
-            }
-
-            .form-section {
-                padding: 35px 25px;
-            }
-
-            .form-header {
-                padding: 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .stats-section {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .form-section {
-                padding: 25px 20px;
-            }
-        }
-
-       </style>
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
             <div>
-                <h1>HealthCare Hospital</h1>
-                <div class="website">healthcarehospitals.in</div>
+                <h1>HealthCare Hospital - B2 Version</h1>
+                <div class="website">www.healthcarehospitals.in</div>
             </div>
-            <div class="phone">📞 040 80888767</div>
+            <div class="phone">📞 +91 040 80888767</div>
         </div>
     </header>
 
-    <section class="stats-section">
-        <div class="stat-item"><div class="stat-number">11M+</div><div class="stat-label">Happy Patients</div></div>
-        <div class="stat-item"><div class="stat-number">236k+</div><div class="stat-label">Surgeries</div></div>
-        <div class="stat-item"><div class="stat-number">302+</div><div class="stat-label">Hospitals</div></div>
-        <div class="stat-item"><div class="stat-number">114+</div><div class="stat-label">Cities</div></div>
-    </section>
-
     <main class="main-content">
         <div class="form-header">
-            <h2>Book Appointment With <span class="subtitle">Top Specialists</span></h2>
+            <h2>Book Your Appointment with <span class="subtitle">Experienced Specialists</span></h2>
         </div>
 
         <div class="form-section">
-            <h3 class="section-title">Patient Information</h3>
+            <h3 class="section-title">Patient Information (B2)</h3>
 
             <form id="appointmentForm">
                 <div class="form-group">
-                    <label for="patientName">Patient Name <span class="required">*</span></label>
-                    <input type="text" id="patientName" class="form-control" placeholder="Enter your full name" required>
+                    <label for="patientName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="patientName" class="form-control" placeholder="Enter patient name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phoneNumber">Phone Number <span class="required">*</span></label>
-                    <input type="tel" id="phoneNumber" class="form-control" placeholder="Enter your phone number" required>
+                    <label for="phoneNumber">Contact Number <span class="required">*</span></label>
+                    <input type="tel" id="phoneNumber" class="form-control" placeholder="Enter mobile number" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="patientEmail">Patient Email <span class="required">*</span></label>
-                    <input type="email" id="patientEmail" class="form-control" placeholder="Enter your email address" required>
+                    <label for="patientEmail">Email Address <span class="required">*</span></label>
+                    <input type="email" id="patientEmail" class="form-control" placeholder="Enter email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="selectProblem">Select Problem <span class="required">*</span></label>
+                    <label for="selectProblem">Select Health Concern <span class="required">*</span></label>
                     <select id="selectProblem" class="form-control" required>
-                        <option value="">Choose your health concern</option>
+                        <option value="">Choose a category</option>
                         <option value="Cardiology">Cardiology</option>
                         <option value="Dermatology">Dermatology</option>
                         <option value="Orthopedic">Orthopedic</option>
-                        <option value="Pediatrics">Pediatrics</option>
                         <option value="Neurology">Neurology</option>
                         <option value="Gynecology">Gynecology</option>
                         <option value="ENT">ENT</option>
-                        <option value="Ophthalmology">Ophthalmology</option>
-                        <option value="General">General Meidcine</option>
-                        <option value="Psychiatry">Psychitary</option>
-                        <option value="Gastroenterology">Gastroenterology</option>
-                        <option value="Pulmonology">Pulmonology</option>
-                        <option value="Url0ogy">Urology</option>
-                        <option value="End-bvcrinology">Endocrinology</option>
-                        <option value="Oncology">Oncology</option>
                     </select>
                 </div>
 
@@ -470,65 +72,41 @@
                     <select id="selectDoctor" class="form-control" required>
                         <option value="">Select your problem first</option>
                     </select>
-		    7889
                 </div>
 
                 <div class="form-group">
-                    <label for="appointmentDate">Book Yoru Appointment Date <span class="required">*</span></label>
+                    <label for="appointmentDate">Appointment Date <span class="required">*</span></label>
                     <input type="date" id="appointmentDate" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="preferredTime">Preferred Timings <span class="required">*</span></label>
+                    <label for="preferredTime">Preferred Time <span class="required">*</span></label>
                     <select id="preferredTime" class="form-control" required>
-                        <option value="">Select appointment time</option>
+                        <option value="">Select time</option>
                         <option value="10:00 AM">10:00 AM</option>
                         <option value="11:30 AM">11:30 AM</option>
                         <option value="12:00 PM">12:00 PM</option>
-                        <option value="1:30 PM">1:30 PM</option>
-                        <option value="2:10 PM">2:10 PM</option>
-                        <option value="2:30 PM">2:30 PM</option>
                         <option value="3:00 PM">3:00 PM</option>
-                        <option value="3:30 PM">3:30 PM</option>
                         <option value="4:00 PM">4:00 PM</option>
-                        <option value="4:30 PM">4:30 PM</option>
                         <option value="5:00 PM">5:00 PM</option>
-                        <option value="5:30 PM">5:30 PM</option>
                         <option value="6:00 PM">6:00 PM</option>
-                        <option value="6:30 PM">6:30 PM</option>
-                        <option value="7:00 PM">7:00 PM</option>
                     </select>
                 </div>
 
-                <button type="submit" class="btn-primary">Book Appointment</button>
-
+                <button type="submit" class="btn-primary">Book Now</button>
                 <div id="message" class="message" style="display: none;"></div>
             </form>
         </div>
     </main>
-
-    <footer class="footer-reviews">
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-        <span>1300+ Reviews</span>
-    </footer>
 
     <script>
         const doctorMap = {
             Cardiology: ["Dr. Rajesh Sharma", "Dr. Niharika Gupta"],
             Dermatology: ["Dr. Priya Patel", "Dr. Suresh Kumari"],
             Orthopedic: ["Dr. Amit Kumar", "Dr. Kavya Menon"],
-            Pediatrics: ["Dr. Sumita Singh", "Dr. Ravi Mehta"],
             Neurology: ["Dr. Vivek Gupta", "Dr. Meera Jain"],
             Gynecology: ["Dr. Kavi Reddy", "Dr. Pooja Sharma"],
-            ENT: ["Dr. Arjun Mehta", "Dr. Sanjay Yadav"],
-            Ophthalmology: ["Dr. Niha Agarwal", "Dr. Rohit Verma"],
-            General: ["Dr. Ravi Krishnan", "Dr. Anita Desai"],
-            Psychiatry: ["Dr. Meera Joshi", "Dr. Rajesh Pandey"],
-            Gastroenterology: ["Dr. Suresh Yadav", "Dr. Priya Malhotra"],
-            Pulmonology: ["Dr. Pooja Malik", "Dr. Vivek Singh"],
-            Urology: ["Dr. Kiran Verma", "Dr. Ashish Jain"],
-            Endocrinology: ["Dr. Ashish Jain", "Dr. Sneha Kapoor"],
-            Oncology: ["Dr. Sanya Kapoor", "Dr. Manish Gupta"]
+            ENT: ["Dr. Arjun Mehta", "Dr. Sanjay Yadav"]
         };
 
         let bookedSlots = {};
@@ -550,38 +128,29 @@
 
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('patientName').value.trim();
-            const phone = document.getElementById('phoneNumber').value.trim();
-            const email = document.getElementById('patientEmail').value.trim();
-            const date = document.getElementById('appointmentDate').value;
-            const problem = document.getElementById('selectProblem').value;
             const doctor = document.getElementById('selectDoctor').value;
+            const date = document.getElementById('appointmentDate').value;
             const time = document.getElementById('preferredTime').value;
             const messageDiv = document.getElementById('message');
 
             const slotKey = `${doctor}_${date}_${time}`;
             if (bookedSlots[slotKey]) {
-                messageDiv.textContent = '❌ This time slot is already booked! Please choose a different time.';
+                messageDiv.textContent = '❌ Slot already booked!';
                 messageDiv.className = 'message error';
                 messageDiv.style.display = 'block';
                 return;
             }
 
-            const appointment = { name, phone, email, date, problem, doctor, time };
             bookedSlots[slotKey] = true;
-            const doctorAppointments = JSON.parse(localStorage.getItem("appointments_" + doctor)) || [];
-            doctorAppointments.push(appointment);
-            localStorage.setItem("appointments_" + doctor, JSON.stringify(doctorAppointments));
-
-            messageDiv.textContent = '✅ Appointment booked successfully! We will contact you soon.';
+            messageDiv.textContent = '✅ Appointment confirmed!';
             messageDiv.className = 'message success';
             messageDiv.style.display = 'block';
             this.reset();
-            document.getElementById('selectDoctor').innerHTML = '<option value="">First select a problem</option>';
-            messageDiv.scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
 </html>
+ 
+
 
 
