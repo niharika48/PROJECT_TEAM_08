@@ -541,6 +541,28 @@
             Oncology: ["Dr. Sanya Kapoor", "Dr. Manish Gupta"]
         };
 
+        // Store booked slots to prevent double booking
+        let bookedSlots = {};
+
+        // Set minimum date to today
+        document.getElementById('appointmentDate').min = new Date().toISOString().split('T')[0];
+
+        document.getElementById('selectProblem').addEventListener('change', function() {
+            const problem = this.value;
+            const doctorSelect = document.getElementById('selectDoctor');
+            
+            doctorSelect.innerHTML = '<option value="">Select Doctor</option>';
+            
+            if (problem && doctorMap[problem]) {
+                doctorMap[problem].forEach(doctor => {
+                    const option = document.createElement('option');
+                    option.value = doctor;
+                    option.textContent = doctor;
+                    doctorSelect.appendChild(option);
+                });
+            }
+        });
+
 
 
 
