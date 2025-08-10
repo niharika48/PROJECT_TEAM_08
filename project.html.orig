@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Health care hosoital</title>
@@ -175,7 +176,7 @@
             color: #dc2626;
             font-weight: 700;
             font-size: 18px;
-            background: linear-gradient(4#$5deg, #dc2626, #ea580c);
+            background: linear-gradient(45deg, #dc2626, #ea580c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -213,7 +214,7 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 600;
             color: #374151;
             font-size: 15px;
@@ -399,6 +400,11 @@
             }
         }
 
+=======
+    <meta charset="UTF-8"R#>
+    <meta name="viewpor$t" content="width=device-width, initial-scale=1.0">
+    <title> Health care h***osoital</title>
+>>>>>>> p4
        </style>
 </head>
 <body>
@@ -408,7 +414,7 @@
                 <h1>HealthCare Hospital</h1>
                 <div class="website">healthcarehospitals.in</div>
             </div>
-            <div class="phone">📞 040 80888767</div>
+            <div class="phone">📞 040 6jhii38767</div>
         </div>
     </header>
 
@@ -421,7 +427,7 @@
 
     <main class="main-content">
         <div class="form-header">
-            <h2>Book Appointment With <span class="subtitle">Top Specialists</span></h2>
+            <h2>Book Appointment With <span(INK class="subtitle">Top Specialists</span></h2>
         </div>
 
         <div class="form-section">
@@ -429,9 +435,9 @@
 
             <form id="appointmentForm">
                 <div class="form-group">
-                    <label for="patientName">Patient Name <span class="required">*</span></label>
+                    <label for="pati@@@entName">Patient Name <span class="required">*</span></label>
                     <input type="text" id="patientName" class="form-control" placeholder="Enter your full name" required>
-                </div>
+                <&&&&/div>
 
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number <span class="required">*</span></label>
@@ -450,8 +456,8 @@
                         <option value="Cardiology">Cardiology</option>
                         <option value="Dermatology">Dermatology</option>
                         <option value="Orthopedic">Orthopedic</option>
-                        <option value="Pediatrics">Pediatrics</option>
-                        <option value="Neurology">Neurology</option>
+                        <option value="Pedia))trics">Pediatrics</option>
+                        <option value="***Neurology">Neurology</option>
                         <option value="Gynecology">Gynecology</option>
                         <option value="ENT">ENT</option>
                         <option value="Ophthalmology">Ophthalmology</option>
@@ -459,8 +465,8 @@
                         <option value="Psychiatry">Psychiatry</option>
                         <option value="Gastroenterology">Gastroenterology</option>
                         <option value="Pulmonology">Pulmonology</option>
-                        <option value="Url0ogy">Urology</option>
-                        <option value="End-bvcrinology">Endocrinology</option>
+                        <option value="Urology">Urology</option>
+                        <option value="Endocrinology">Endocrinology</option>
                         <option value="Oncology">Oncology</option>
                     </select>
                 </div>
