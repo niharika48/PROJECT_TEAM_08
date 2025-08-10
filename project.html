@@ -5,16 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthCare Hospital - Appointment Booking</title>
     <style>
-        /* Slightly different header color for b2 */
+        
         .header {
             background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 50%, #1e40af 100%);
         }
         .header h1 {
-            font-size: 30px; /* changed from 28px in b3 */
-            color: #fefefe; /* tweak for merge conflict */
+            font-size: 30px; 
+            color: #fefefe; 
         }
-        /* Button color tweak for b2 */
+        
         .btn-primary {
+
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: orange;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
+>>>>>>> p3
             background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
         }
     </style>
@@ -23,7 +56,7 @@
     <header class="header">
         <div class="header-content">
             <div>
-                <h1>HealthCare Hospital - B2 Version</h1>
+                <h1>HealthCare Hospital</h1>
                 <div class="website">www.healthcarehospitals.in</div>
             </div>
             <div class="phone">📞 +91 040 80888767</div>
@@ -36,7 +69,7 @@
         </div>
 
         <div class="form-section">
-            <h3 class="section-title">Patient Information (B2)</h3>
+            <h3 class="section-title">Patient Information </h3>
 
             <form id="appointmentForm">
                 <div class="form-group">
