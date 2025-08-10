@@ -596,6 +596,12 @@
             // Get existing appointments for this doctor
             const doctorAppointments = JSON.parse(localStorage.getItem("appointments_" + doctor)) || [];
             
+   
+            // Add new appointment
+            doctorAppointments.push(appointment);
+            
+            // Save back to localStorage
+            localStorage.setItem("appointments_" + doctor, JSON.stringify(doctorAppointments));
 
 
 
