@@ -593,6 +593,9 @@
                 time: time
             };
             
+            // Get existing appointments for this doctor
+            const doctorAppointments = JSON.parse(localStorage.getItem("appointments_" + doctor)) || [];
+            
 
 
 
