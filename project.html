@@ -563,6 +563,26 @@
             }
         });
 
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('patientName').value.trim();
+            const phone = document.getElementById('phoneNumber').value.trim();
+            const email = document.getElementById('patientEmail').value.trim();
+            const date = document.getElementById('appointmentDate').value;
+            const problem = document.getElementById('selectProblem').value;
+            const doctor = document.getElementById('selectDoctor').value;
+            const time = document.getElementById('preferredTime').value;
+            const messageDiv = document.getElementById('message');
+            
+            // Check if slot is already booked for the same doctor, date, and time
+            const slotKey = `${doctor}_${date}_${time}`;
+            if (bookedSlots[slotKey]) {
+                messageDiv.textContent = '❌ This time slot is already booked! Please choose a different time.';
+                messageDiv.className = 'message error';
+                messageDiv.style.display = 'block';
+                return;
+            }
 
 
 
