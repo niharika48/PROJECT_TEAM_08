@@ -602,6 +602,20 @@
             
             // Save back to localStorage
             localStorage.setItem("appointments_" + doctor, JSON.stringify(doctorAppointments));
-
+  // Show success message
+            messageDiv.textContent = '✅ Appointment booked successfully! We will contact you soon.';
+            messageDiv.className = 'message success';
+            messageDiv.style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            document.getElementById('selectDoctor').innerHTML = '<option value="">First select a problem</option>';
+            
+            // Scroll to message
+            messageDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
 
 
